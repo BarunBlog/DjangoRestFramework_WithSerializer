@@ -29,7 +29,7 @@ def article_list(request):
 @csrf_exempt
 def article_detail(request, pk):
     try:
-        article = Article.object.get(pk=pk)
+        article = Article.objects.get(pk=pk)
 
     except Article.DoesNotExist:
         return HttpResponse(status=404)
